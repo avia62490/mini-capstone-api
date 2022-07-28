@@ -8,3 +8,6 @@ GET http://localhost:3000/bicycle
 
 ###
 GET http://localhost:3000/phone
+
+###
+GET http://localhost:3000/product/1

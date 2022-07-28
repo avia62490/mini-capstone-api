@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get "/computer" => "products#display_computer"
   get "/bicycle" => "products#display_bicycle"
   get "/phone" => "products#display_phone"
+  get "/product/:id" => "products#display_by_index"
 end

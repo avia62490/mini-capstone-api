@@ -16,4 +16,12 @@ class ProductsController < ApplicationController
     render json: Product.find_by(name: "phone")
   end
 
+  def display_by_index
+    p "=" *99
+    p params["id"]
+    p "=" *99
+  
+    render json: Product.find_by(id: params[:id])
+  end
+
 end
