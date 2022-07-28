@@ -22,10 +22,10 @@ end
 def update
   p "working here too"
   product = Product.find_by(id: params[:id])
-  product.name = "gloves"
-  product.price = 14
-  product.image_url = "gloves picture online"
-  product.description = "Keep your hands warm"
+  product.name = params[:name]
+  product.price = params[:price]
+  product.image_url = params[:image_url]
+  product.description = params[:description]
   product.save
   render json: product.as_json
 end

@@ -8,8 +8,19 @@ POST http://localhost:3000/products
 Content-Type: application/json
 
 {
-  "name": "Shirt",
+  "name": "Jacket",
   "price": 10,
   "image_url": "",
   "description": "Wear this on top"
+}
+
+###
+PATCH http://localhost:3000/products/10
+Content-Type: application/json
+
+{
+  "name": "Chair",
+  "price": 17,
+  "image_url": "Chair image",
+  "description": "Sit on this"
 }
