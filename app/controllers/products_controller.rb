@@ -19,6 +19,17 @@ def create
   render json: product.as_json
 end
 
+def update
+  p "working here too"
+  product = Product.find_by(id: params[:id])
+  product.name = "gloves"
+  product.price = 14
+  product.image_url = "gloves picture online"
+  product.description = "Keep your hands warm"
+  product.save
+  render json: product.as_json
+end
+
 
 
 end
