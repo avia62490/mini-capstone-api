@@ -15,12 +15,12 @@ Content-Type: application/json
 }
 
 ###
-PATCH http://localhost:3000/products/10
+PATCH http://localhost:3000/products/5
 Content-Type: application/json
 
 {
-  "name": "Chair",
-  "price": 17,
-  "image_url": "Chair image",
-  "description": "Sit on this"
+  "image_url": "Picture of chair"
 }
+
+###
+DELETE 
