@@ -14,13 +14,13 @@ Content-Type: application/json
   "description": "Wear this on top"
 }
 
-# ###
-PATCH http://localhost:3000/products/5.json
+###
+PATCH http://localhost:3000/products/12.json
 Content-Type: application/json
 
 {
   "image_url": "Picture of chair"
 }
 
-# ###
+###
 DELETE http://localhost:3000/products/5.json
