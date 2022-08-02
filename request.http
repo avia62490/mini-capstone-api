@@ -1,26 +1,26 @@
-# GET http://localhost:3000/products
+GET http://localhost:3000/products.json
 
 ###
-GET http://localhost:3000/products/12
+GET http://localhost:3000/products/3.json
 
 ###
-# POST http://localhost:3000/products
-# Content-Type: application/json
+POST http://localhost:3000/products.json
+Content-Type: application/json
 
-# {
-#   "name": "Jacket",
-#   "price": 10,
-#   "image_url": "",
-#   "description": "Wear this on top"
-# }
-
-# ###
-# PATCH http://localhost:3000/products/5
-# Content-Type: application/json
-
-# {
-#   "image_url": "Picture of chair"
-# }
+{
+  "name": "Jacket",
+  "price": 10,
+  "image_url": "",
+  "description": "Wear this on top"
+}
 
 # ###
-# DELETE http://localhost:3000/products/5
+PATCH http://localhost:3000/products/5.json
+Content-Type: application/json
+
+{
+  "image_url": "Picture of chair"
+}
+
+# ###
+DELETE http://localhost:3000/products/5.json

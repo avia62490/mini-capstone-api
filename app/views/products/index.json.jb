@@ -1,0 +1,5 @@
+@products.map do |product|
+  {
+    id: product.id,
+  }
+end
