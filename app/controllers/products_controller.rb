@@ -26,9 +26,11 @@ def create
   image_url: params[:image_url],
   description: params[:description]
   )
-  @product.save
-  # render json: product.as_json
-  render template: "products/show"
+  if @product.save
+    render template: "products/show"
+  else
+    render json: @product.errors.full_messages, status: :unprocessable_entity
+  end
 end
 
 def update
@@ -42,8 +44,11 @@ def update
   @product.price = params[:price] || @product.price
   @product.image_url = params[:image_url] || @product.image_url
   @product.description = params[:description] || @product.description
-  @product.save
-  render template: "products/show"
+  if @product.save
+    render template: "products/show"
+  else
+    render json: @product.errors.full_messages, status: :unprocessable_entity
+  end
 end
 
 def destroy
