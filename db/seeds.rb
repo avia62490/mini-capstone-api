@@ -1,7 +1,22 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+Product.create!([
+  {name: "phone", price: 699, image_url: nil, description: "Call or text people"},
+  {name: "Shirt", price: 10, image_url: nil, description: "You wear it"},
+  {name: "Coat", price: 10, image_url: "Tshirt picture", description: "You wear it"},
+  {name: "computer", price: 850, image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQeI9j2Y4vExGUQiLL-6bz8c2RihsddQ9aog&usqp=CAU", description: "useful for coding"},
+  {name: "gloves", price: 14, image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRknGDcW71ftWG9zsIOYOJWg71K9Pp2rPUlcg&usqp=CAU", description: "Wear these on your hands"},
+  {name: "Chair", price: 17, image_url: "https://cdn.shopify.com/s/files/1/0124/5662/4187/products/102078ba05f00ead3aec6f240ab7ebaf_46b686dd-2ac4-4d7b-9ac1-001770a055f5_2048x.jpg?v=1620184068", description: "Sit on this"},
+  {name: "bicycle", price: 700, image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRrypbZ2k3gwO9uVbH7Ku3Qa-OIyj6KYeyT7XegJYn0KL-fku6aO9v7plhAtOnDbShXdI&usqp=CAU", description: "ride around faster"},
+  {name: "Jacket", price: 10, image_url: "Picture of chair", description: "You wear it"},
+  {name: "Jacket", price: 10, image_url: "", description: "Wear this on top"},
+  {name: "Jacket", price: 10, image_url: "", description: "Wear this on top"},
+  {name: "Jacket", price: 10, image_url: "", description: "Wear this on top"},
+  {name: "Jacket", price: 10, image_url: "", description: "Wear this on top"},
+  {name: "Jacket", price: 10, image_url: "", description: "Wear this on top"},
+  {name: "Jacket", price: 10, image_url: "", description: "Wear this on top"},
+  {name: "Jacket", price: 10, image_url: "", description: "Wear this on top"},
+  {name: "Jacket", price: 10, image_url: "", description: "Wear this on top"},
+  {name: "Jacket", price: 10, image_url: "", description: "Wear this on top"},
+  {name: "Jacket", price: 10, image_url: "", description: "Wear this on top"},
+  {name: "Jacket", price: 10, image_url: "", description: "Wear this on top"},
+  {name: "Jacket", price: 10, image_url: "", description: "Wear this on top"}
+])
