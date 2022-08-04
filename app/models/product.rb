@@ -5,7 +5,10 @@ class Product < ApplicationRecord
   validates :price, comparison: {greater_than: 0}
   validates :description, length: {in: 10..500}
 
-
+  def supplier
+    Supplier.find_by(id: supplier_id)
+  end
+  
   def friendly_created_at
     created_at.strftime("%B %e, %Y")
   end
