@@ -1,25 +1,28 @@
 GET http://localhost:3000/products.json
 
 ###
-GET http://localhost:3000/products/3.json
+GET http://localhost:3000/products/1.json
 
 ###
 POST http://localhost:3000/products.json
 Content-Type: application/json
 
 {
-  "name": "Coat",
+  "name": "Coat 8",
   "price": 1,
   "image_url": "",
-  "description": "Warm"
+  "description": "Keeps you warm"
 }
 
 ###
-PATCH http://localhost:3000/products/12.json
+PATCH http://localhost:3000/products/31.json
 Content-Type: application/json
 
 {
-  "image_url": "Picture of chair"
+  "name": "Coat 7",
+  "price": 1,
+  "image_url": "",
+  "description": "Keeps you really warm"
 }
 
 ###
