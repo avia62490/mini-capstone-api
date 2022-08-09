@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+before_action :authenticate_admin
 
 def index
   p "="*99
@@ -23,7 +24,6 @@ def create
   @product = Product.new(
   name: params[:name],
   price: params[:price],
-  image_url: params[:image_url],
   description: params[:description]
   )
   if @product.save
@@ -42,7 +42,6 @@ def update
 
   @product.name = params[:name] || @product.name
   @product.price = params[:price] || @product.price
-  @product.image_url = params[:image_url] || @product.image_url
   @product.description = params[:description] || @product.description
   if @product.save
     render template: "products/show"

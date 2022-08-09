@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user
-  
+
   def show
     @order = Order.find_by(id: params[:id])
     render template: "orders/show"

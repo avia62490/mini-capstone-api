@@ -1,20 +1,33 @@
-POST http://localhost:3000/orders.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NjAxMzgyMTN9.rb7cVx4tNSC6ni9xqxPszWVJSChHXjx7qmV1X_hMKl8
+@admin_jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjAxNTc5NTl9.NKyblcLnNxNUyd6q8MI7TJp3RrD4CwnzWy2a3x9rLVE
+
+@user_jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NjAxNTgwMjB9.rorUtxm_rvEBHak93MRmZBbr8qhONDqaMQPOuJhiI1o
+
+### View products
+GET  http://localhost:3000/products.json
+Authorization: Bearer {{user_jwt}}
+
+### Update a Product
+PATCH http://localhost:3000/products/19.json
+Authorization: Bearer {{admin_jwt}}
 Content-Type: application/json
 
 {
-  "product_id": 2
+  "name" : "Warmmm jacket"
 }
+
+### Delete a Product
+DELETE  http://localhost:3000/products/18.json
+Authorization: Bearer {{admin_jwt}}
 
 ###Create a session/ user logs in
 POST http://localhost:3000/sessions.json
 Content-Type: application/json
 
 {
-  "email": "sally@sally.com",
+  "email": "bob@bob.com",
   "password": "password"
 }
 
-###
+### View an order (logged in)
 GET http://localhost:3000/orders/1.json
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NjAxNTM5NzB9.f5aKM0CyFf_xUix_eBDdFfCnsIwGDcCB7qckTIv6JH8
