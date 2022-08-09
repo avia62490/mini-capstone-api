@@ -5,8 +5,10 @@ class OrdersController < ApplicationController
     p "ORDER CREATED"
     p "=" * 99
     if current_user
-      product = Product.find_by(id: params[:product_id])
-      render json: product.as_json
+      @order = Order.new(user_id: 1, product_id: 1, quantity: 1)
+      @order.save
+      # render json: {measd: "order saved"}
+      render template: "orders/show"
     else
       render json: {messGE: "Must log in"}
     end

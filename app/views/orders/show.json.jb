@@ -1,0 +1,6 @@
+{
+  id: @order.id,
+  product: Product.first.name,
+  created_at: @order.created_at,
+  updated_at: @order.updated_at
+}
