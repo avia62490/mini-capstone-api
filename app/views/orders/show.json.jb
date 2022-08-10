@@ -1,6 +1,6 @@
 {
   id: @order.id,
-  product: Product.first.name,
+  product: Product.find_by(id: params[:product_id]).name,
   user_id: @order.user_id,
   created_at: @order.created_at,
   updated_at: @order.updated_at
