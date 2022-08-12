@@ -16,6 +16,12 @@ class OrdersController < ApplicationController
     end
     order_tax = order_subtotal * 0.09
     order_total = order_subtotal + order_tax
+    order = Order.new(
+    user_id: current_user.id,
+    sub_total: order_subtotal,
+    tax: order_tax,
+    total: order_total
+    )
     render json: order.as_json
   end
 end

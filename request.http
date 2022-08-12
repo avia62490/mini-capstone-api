@@ -47,11 +47,11 @@ Authorization: Bearer {{user_id2}}
 
 ### Create an order
 POST http://localhost:3000/orders.json
-Authorization: Bearer {{admin_jwt}}
+Authorization: Bearer {{user_id2}}
 
 ### Add item to Cart
 POST http://localhost:3000/carted_products
-Authorization: Bearer {{admin_jwt}}
+Authorization: Bearer {{user_id2}}
 Content-Type: application/json
 
 {
@@ -61,4 +61,4 @@ Content-Type: application/json
 
 ### View Carted_products
 GET http://localhost:3000/carted_products
-Authorization: Bearer {{admin_jwt}}
+Authorization: Bearer {{user_id2}}
