@@ -1,7 +1,8 @@
-@admin_jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjAxNTc5NTl9.NKyblcLnNxNUyd6q8MI7TJp3RrD4CwnzWy2a3x9rLVE
+@admin_jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjA0MDkxNDd9.NJA2AGgC4wWKbYkDQzQt4hc8EUqtT6ZiMRu9GC5i0VI
 
-@user_jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NjAxNzUwMTR9.gt7Ai9gEBoee0hmcsYIRiNordFDBMte1mCBAk46dEos
+@user_id2 = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NjA0MDgwNzB9.AlqbkIT9G5Kbt7RFn-KS-OFrREPO-ZQCE34aKg6O97U 
 
+@user_id3 = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NjA0MDkwMjl9.rAV1t-syZ2HqIIi9zZoWkDoAmajt0M45-ZcgiOVdL1I
 
 ###Create a Product
 POST http://localhost:3000/products.json
@@ -35,20 +36,24 @@ POST http://localhost:3000/sessions.json
 Content-Type: application/json
 
 {
-  "email": "bob@bob.com",
+  "email": "john@john.com",
   "password": "password"
 }
 
 ### View an order (logged in)
 GET http://localhost:3000/orders/2.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NjAxNTM5NzB9.f5aKM0CyFf_xUix_eBDdFfCnsIwGDcCB7qckTIv6JH8
+Authorization: Bearer {{user_id2}}
 
 ### Create an order
 POST http://localhost:3000/orders.json
-Authorization: Bearer {{user_jwt}}
+Authorization: Bearer {{user_id2}}
 Content-Type: application/json
 
 {
   "product_id": 8,
   "quantity": 3
 }
+
+### Add item to Cart
+POST http://localhost:3000/carted_products
+Authorization: Bearer {{admin_jwt}}

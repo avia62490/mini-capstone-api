@@ -3,7 +3,8 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find_by(id: params[:id])
-    render template: "orders/show"
+    # render template: "orders/show"
+    render json: @order.as_json
   end
 
   def create
