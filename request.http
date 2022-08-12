@@ -2,6 +2,17 @@
 
 @user_jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NjAxNzUwMTR9.gt7Ai9gEBoee0hmcsYIRiNordFDBMte1mCBAk46dEos
 
+
+###Create a Product
+POST http://localhost:3000/products.json
+Content-Type: application/json
+
+{
+  "name": "XBox",
+  "price": 399,
+  "description": "Play fun games, watch movies, and more"
+}
+
 ### View products
 GET  http://localhost:3000/products.json
 # Authorization: Bearer {{admin_jwt}}
@@ -38,6 +49,6 @@ Authorization: Bearer {{user_jwt}}
 Content-Type: application/json
 
 {
-  "product_id": 3,
-  "quantity": 2
+  "product_id": 8,
+  "quantity": 3
 }
