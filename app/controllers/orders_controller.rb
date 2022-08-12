@@ -8,25 +8,14 @@ class OrdersController < ApplicationController
   end
 
   def create
-    p "=" * 99
-    p "ORDER CREATED"
-    p "=" * 99
-    product = Product.find_by(id: params[:product_id])
-    price = product.price
-    order_subtotal = params[:quantity].to_i * price
+    carted_products = CartedProduct.where(user_id: current_user.id, status: "In cart")
+    order_subtotal = 0
+    carted_products.each do |cp|
+      cost_of_product = cp.product.price * cp.quantity
+      order_subtotal += cost_of_product
+    end
     order_tax = order_subtotal * 0.09
     order_total = order_subtotal + order_tax
-
-    @order = Order.new(
-    user_id: current_user.id, 
-    product_id: product.id, 
-    quantity: params[:quantity],
-    sub_total: order_subtotal,
-    tax: order_tax,
-    total: order_total
-    )
-    @order.save
-    render json: @order.as_json
-    # render template: "orders/show"
+    render json: order.as_json
   end
 end

@@ -4,6 +4,15 @@
 
 @user_id3 = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NjA0MDkwMjl9.rAV1t-syZ2HqIIi9zZoWkDoAmajt0M45-ZcgiOVdL1I
 
+###Create a session/ user logs in
+POST http://localhost:3000/sessions.json
+Content-Type: application/json
+
+{
+  "email": "john@john.com",
+  "password": "password"
+}
+
 ###Create a Product
 POST http://localhost:3000/products.json
 Content-Type: application/json
@@ -31,14 +40,6 @@ Content-Type: application/json
 DELETE  http://localhost:3000/products/19.json
 Authorization: Bearer {{admin_jwt}}
 
-###Create a session/ user logs in
-POST http://localhost:3000/sessions.json
-Content-Type: application/json
-
-{
-  "email": "john@john.com",
-  "password": "password"
-}
 
 ### View an order (logged in)
 GET http://localhost:3000/orders/2.json
@@ -46,14 +47,18 @@ Authorization: Bearer {{user_id2}}
 
 ### Create an order
 POST http://localhost:3000/orders.json
-Authorization: Bearer {{user_id2}}
-Content-Type: application/json
-
-{
-  "product_id": 8,
-  "quantity": 3
-}
+Authorization: Bearer {{admin_jwt}}
 
 ### Add item to Cart
 POST http://localhost:3000/carted_products
+Authorization: Bearer {{admin_jwt}}
+Content-Type: application/json
+
+{
+  "product_id": 2,
+  "quantity": 5
+}
+
+### View Carted_products
+GET http://localhost:3000/carted_products
 Authorization: Bearer {{admin_jwt}}
