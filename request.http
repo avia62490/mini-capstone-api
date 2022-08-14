@@ -27,14 +27,21 @@ Authorization: Bearer {{user_id3}}
 
 ### Add item to Cart
 POST http://localhost:3000/carted_products
-Authorization: Bearer {{user_id3}}
+Authorization: Bearer {{admin}}
 Content-Type: application/json
 
 {
-  "product_id": 20,
-  "quantity": 3
+  "product_id": 10,
+  "quantity": 4
 }
 
 ### View Carted_products
-GET http://localhost:3000/carted_products
+GET http://localhost:3000/carted_products.json
 Authorization: Bearer {{admin}}
+
+### Remove Item from Cart
+DELETE  http://localhost:3000/carted_products/1
+Authorization: Bearer {{admin}}
+
+###View ALL products
+GET http://localhost:3000/products.json
