@@ -1,64 +1,40 @@
-@admin_jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjA0MDkxNDd9.NJA2AGgC4wWKbYkDQzQt4hc8EUqtT6ZiMRu9GC5i0VI
+@admin_jwt = eyJhbGeyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjA1OTA5MTZ9.EU1OgXbwD8k09v7pXvN7bm-2jPmMpFc0yUiPjndZEfY
 
-@user_id2 = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NjA0MDgwNzB9.AlqbkIT9G5Kbt7RFn-KS-OFrREPO-ZQCE34aKg6O97U 
+@user_id2 = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NjA1OTA5NzZ9.RDeuDht9Kmh4ZZwZ3Z1xFhtSe491t6dfKo320hGZ91k 
 
-@user_id3 = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NjA0MDkwMjl9.rAV1t-syZ2HqIIi9zZoWkDoAmajt0M45-ZcgiOVdL1I
+@user_id3 = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NjA1OTEwMDF9.6DFtn5mvEPeFbb4yDobcqzU1rqxf6LEveOhdji7OIYQ
 
 ###Create a session/ user logs in
 POST http://localhost:3000/sessions.json
 Content-Type: application/json
 
 {
-  "email": "john@john.com",
+  "email": "sally@sally.com",
   "password": "password"
-}
-
-###Create a Product
-POST http://localhost:3000/products.json
-Content-Type: application/json
-
-{
-  "name": "XBox",
-  "price": 399,
-  "description": "Play fun games, watch movies, and more"
 }
 
 ### View products
 GET  http://localhost:3000/products.json
 # Authorization: Bearer {{admin_jwt}}
 
-### Update a Product
-PATCH http://localhost:3000/products/19.json
-Authorization: Bearer {{admin_jwt}}
-Content-Type: application/json
-
-{
-  "name" : "Warmmm jacket"
-}
-
-### Delete a Product
-DELETE  http://localhost:3000/products/19.json
-Authorization: Bearer {{admin_jwt}}
-
-
 ### View an order (logged in)
 GET http://localhost:3000/orders/2.json
 Authorization: Bearer {{user_id2}}
 
-### Create an order
+### Create an order (BUY)
 POST http://localhost:3000/orders.json
-Authorization: Bearer {{user_id2}}
+Authorization: Bearer {{user_id3}}
 
 ### Add item to Cart
 POST http://localhost:3000/carted_products
-Authorization: Bearer {{user_id2}}
+Authorization: Bearer {{user_id3}}
 Content-Type: application/json
 
 {
-  "product_id": 2,
-  "quantity": 5
+  "product_id": 3,
+  "quantity": 2
 }
 
 ### View Carted_products
 GET http://localhost:3000/carted_products
-Authorization: Bearer {{user_id2}}
+Authorization: Bearer {{user_id3}}
