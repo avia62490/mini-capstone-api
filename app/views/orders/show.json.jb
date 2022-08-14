@@ -1,6 +1,9 @@
 {
   id: @order.id,
   user_id: @order.user_id,
+  sub_total: @order.sub_total,
+  tax: @order.tax,
+  total: @order.total,
   created_at: @order.created_at,
   updated_at: @order.updated_at
 }

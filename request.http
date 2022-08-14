@@ -1,4 +1,4 @@
-@admin_jwt = eyJhbGeyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjA1OTA5MTZ9.EU1OgXbwD8k09v7pXvN7bm-2jPmMpFc0yUiPjndZEfY
+@admin = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjA1OTY3MzR9.bduQNQKLK3D5ELux0A1tIp4b_ytFGywkcIS_nuaJWFo
 
 @user_id2 = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NjA1OTA5NzZ9.RDeuDht9Kmh4ZZwZ3Z1xFhtSe491t6dfKo320hGZ91k 
 
@@ -9,17 +9,17 @@ POST http://localhost:3000/sessions.json
 Content-Type: application/json
 
 {
-  "email": "sally@sally.com",
+  "email": "john@john.com",
   "password": "password"
 }
 
-### View products
-GET  http://localhost:3000/products.json
-# Authorization: Bearer {{admin_jwt}}
+### View All Orders of User
+GET  http://localhost:3000/orders.json
+Authorization: Bearer {{user_id3}}
 
 ### View an order (logged in)
 GET http://localhost:3000/orders/2.json
-Authorization: Bearer {{user_id2}}
+Authorization: Bearer {{user_id3}}
 
 ### Create an order (BUY)
 POST http://localhost:3000/orders.json
@@ -31,10 +31,10 @@ Authorization: Bearer {{user_id3}}
 Content-Type: application/json
 
 {
-  "product_id": 3,
-  "quantity": 2
+  "product_id": 20,
+  "quantity": 3
 }
 
 ### View Carted_products
 GET http://localhost:3000/carted_products
-Authorization: Bearer {{user_id3}}
+Authorization: Bearer {{admin}}

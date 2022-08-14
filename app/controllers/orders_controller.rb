@@ -1,8 +1,13 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user
 
+  def index
+    orders = current_user.orders
+    render json: orders.as_json
+  end
+
   def show
-    @order = Order.find_by(id: params[:id])
+    @order = current_user.orders[params[:id].to_i - 1]
     render template: "orders/show"
     # render json: @order.as_json
   end
