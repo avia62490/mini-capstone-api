@@ -26,7 +26,14 @@ class OrdersController < ApplicationController
     tax: order_tax,
     total: order_total
     )
-    order.save!
+    order.save
+
+    #Update Carted Products
+    carted_products.each do |cp|
+      cp.order_id = order.id
+      cp.status = "Purchased"
+      cp.save
+    end
     render json: order.as_json
   end
 end
